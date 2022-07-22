@@ -30,7 +30,8 @@
  @media (max-width:951px){
   
      header{
-        left: 120%;
+      width:auto;
+      position:static;
      }
      body{
          padding: 0px;
