@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(247, 247, 247);
+}
+.container .card .title {
+    text-align: center ;
+    font-size: 100px;
+    font-weight: 100;
+   flex: 1;
+}
+.container .card .box{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container .card .box .box__{
+    border: 6px solid yellow;
+    border-radius: 15px;
+    height: 150px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.container .card .box .box__ p{
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0;
+}
+.container .card .box .box__ h1{
+    margin: 0;
+}
