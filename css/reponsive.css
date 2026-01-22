@@ -38,61 +38,16 @@
      }
     
  }
- @media (max-width:750px){
+@media (min-width: 768px) {
+  #myCanvas {
+    width: 600px !important;
+    height: 600px !important;
     
-    .about .row .inf4-1{
-        margin: 0 1rem;
-    }
-   
-     .about .row .col .box{
-         width:30%;
-         padding: 0 2rem;
-     }
-     .about .row{
-         margin-top: 2rem;
-     }
-     .about .loading{
-         padding: 0 2rem;
-         top: 0;
-     }
-     .contact .row .contact-content{
-         width:100%;
-     }
-     .loading-inf4 p{
-         font-size: 1.5rem;
-         margin-top: 1.5rem;
-     }
-     .loading input[type="text"]{
-         height: auto;
-     }
-     .contact .load{
-         position:unset;
-     }
-
-     @media (max-width:600px){
-        .about .row .col .box{
-            width:100%;
-     }
-     .about .row .inf4-1{
-         display: block;
-     }
- }
+  }
 }
- @media (max-width:400px){
-    .home .home_Bg1 img{
-        display: none;
-    }
-    .img1 {
-        display: none;
-    }
-    .about .row .inf4-1{
-        font-size: 1.2rem;
-        padding: 0 10px;
-    }
-    .education .box-container .box h3{
-        width: auto;
-    }
-    .self .product{
-        margin: auto;
-    }
- }
+
+ #myCanvas {
+    width: 300px;
+    height: 300px;
+    
+  }

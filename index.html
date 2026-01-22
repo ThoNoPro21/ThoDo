@@ -1,377 +1,1360 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/zarocknz/javascript-winwheel@master/Winwheel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reponsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Thơ Vlogs</title>
 </head>
 
 <body>
-    <header>
-        <div class="head_left">
-        <div class="user">
-            <img src="img/z3417075344331_c8d3047faf362d17e495f421789f09ea.jpg"alt="">
-               <div class="icon-camera">
-                <i class="fa fa-camera"></i>
-            </div>
-            <div>
-            <h1 class="name">Thơ Đồ (Xu Cà Na)</h1>
-            <p class="story">20103051 <br>Công Nghệ Thông Tin K20</p>
-        </div>
-        </div>
+    <div class="w-full h-full ">
+        <div class="intro flex flex-col lg:flex-row gap-4 min-h-screen">
+            <div class="w-full lg:w-1/3 max-w-md ">
+                <!-- Profile Card -->
+                <div
+                    class="relative bg-white rounded-xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500">
 
-        <div class="follow">
-            <i class="fa-solid fa-people-group" id="fl1"><p>2.1M</p></i>
-            <i class="fa-solid fa-heart"id="fl2"><p>854.M</p></i>
-            <i class="fa-solid fa-person-circle-plus"id="fl3"><p>100</p></i>
-        </div>
-
-        <div class="more">
-            <div class="l" onclick="trai()"><i class="fa-solid fa-user-plus" id="icon_theodoi" onclick="theodoi()"></i>
-                <p id="iconp">Theo dõi</p>
-                <p1>Hủy theo dõi</p1>
-            </div>
-            <div class="r">
-                <i class="fa-brands fa-facebook-messenger"></i><p>Nhắn tin</p></div>
-        </div>
-
-        <div class="intro">
-            <div class="intro_icons">
-                <div class="intro_icon">
-                    <i class="fa-solid fa-house"></i>
-                    <p>Sống tại <b>Buôn Mê Thuột</b></p>
-                </div>
-            </div>
-            <div class="intro_icons">
-                <div class="intro_icon">
-                    <i class="fa-solid fa-location-pin"></i>
-                    <p>Đến từ <b>Kon Tum </b>(thành phố)</p>
-                </div>
-            </div>
-            <div class="intro_icons">
-                <div class="intro_icon">
-                    <i class="fa-solid fa-heart"></i>
-                    <p>Độc thân</p>
-                </div>
-            </div>
-            <div class="intro_icons">
-                <div class="intro_icon">
-                    <i class="fa-solid fa-clock"></i>
-                    <p>Tham gia vào Tháng 10 năm 2020</p>
-                </div>
-            </div>
-            <div class="intro_icons">
-                <div class="intro_icon">
-                    <i class="fa-solid fa-rss"></i>
-                    <p>Có <b>21.201</b> người theo dõi</p>
-                </div>
-            </div>
-        </div>
-     
-        <div class="list-icons">
-            <div class="icon"><a href="#home">
-                <div class="tetx-icon">Trang chủ</div>
-               <div class="icon1">
-                    <i class="fa-solid fa-house-chimney"></i>
-                </div></a>
-            </div>
-            <div class="icon"><a href="#about">
-                <div class="tetx-icon">Chi tiết</div>
-                <div class="icon1">
-                    <i class="fa-solid fa-user-group"></i>
-                </div></a>
-            </div>
-            <div class="icon"><a href="#education">
-                <div class="tetx-icon">Trình độ</div>
-               <div class="icon1"id="icon">
-                    <i class="fa-solid fa-plus"></i>
-                </div></a>
-            </div>
-            <div class="icon"><a href="#self">
-                <div class="tetx-icon">Học vấn</div>
-               <div class="icon1">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div></a>
-            </div>
-            <div class="icon"><a href="#contact">
-                <div class="tetx-icon">Liên hệ</div>
-                <div class="icon1">
-                    <i class="fa-solid fa-user-graduate"></i>
-                </div></a>  
-            </div>
-           
-        </div>
-        </div>
-    </header>
-
-    <section class="home" id="home">
-        <div class="home_Bg">
-            <div class="home_Bg1">
-        <img style="width: 300px;height: 205px;margin: 0 auto;"src="img/22.png">
-        <h1 class="hello">Xin Chào Mọi Người !</h1>
-        <h2>Mình tên là <span>Thơ</span></h2>
-        <p>Mình đến từ mảnh đất Kon Tum nơi hội tụ của các Siêu anh hùng <span style="color:blue;padding:0 10px;font-size:2rem">thần men Đại Hiệp</span> 
-            và cũng là nơi không có rượu thì buồn nôn (phải 2 lít cơ) và rất vui khi được làm quen với các bạn ?</p>
-        
-        <div class="slide_text">
-           <h3>Những câu nói khuyết danh đáng suy ngẫm</h3>
-        </div>
-
-        <div class="slider">
-            <div class="showslide box">
-                <div class="allbox">
-                <div class="img1">
-                <img src="./img/slider/239961560_600136051127294_1016503584865812581_n.jpg">
-                </div>
-                <div class="box_text">
-                    <p>Nếu bạn cảm thấy tiền không mang lại hạnh phúc cho bạn.Vậy hãy đưa nó cho tôi<br>(Thơ đạo lí_G.12)</p>
-                </div>
-            </div>
-            </div>
-
-            <div class="showslide box">
-                <div class="allbox">
-                <div class="img1">
-                <img src="./img/slider/2.jpg">
-                </div>
-                <div class="box_text">
-                    <p>Không có phụ nữ nào xấu.Chỉ có phụ nữ không biết mình xấu<br>(Thơ nhận định_G.12)</p>
-                </div>
-            </div>
-            </div>
-
-            <div class="showslide box">
-                <div class="allbox">
-                <div class="img1">
-                <img src="./img/slider/238836855_588351692305730_3603906466228419221_n.jpg">
-                </div>
-                <div class="box_text">
-                    <p>Nếu đẹp trai là phạm pháp.Xin lỗi tôi đây đáng bị tử hình<br>(Thơ thẳng thắn_G.12)</p>
-                </div>
-            </div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-             
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-       
-        </div>
-        </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <h1 class="heading">Chi tiết</h1>
-        <div class="about_container">
-            <div class="row">
-               <div class="inf4">
-                   <div class="inf4-1">
-                        <div class="inf4-left">
-                           <h3>Tên : <span>A Thơ</span></h3>
-                           <h3>Tuổi : <span>21</span></h3>
-                           <h3>Lớp : <span>CNTT K20</span></h3>
+                    <!-- Avatar -->
+                    <div class=" bg-gradient-to-br !p-3  from-purple-500 via-purple-600 to-pink-500 text-centerq">
+                        <div class="emoji-overlay" id="emojiOverlay"></div>
+                        <div
+                            class="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-16 -translate-y-16">
+                        </div>
+                        <div
+                            class="absolute bottom-0 right-0 w-40 h-40 bg-white/10 rounded-full translate-x-20 translate-y-20">
                         </div>
 
-                        <div class="inf4-right">
-                           <h3>Nghề nghiệp : <span>Developer Front-end</span></h3>
-                           <h3>Quê quán : <span>Kon Tum</span></h3>
-                           <h3>Tình trạng : <span>Độc thân</span></h3>
-                        </div>
-                   </div>
-               </div>
+                        <!-- Avatar -->
+                        <div class=" flex flex-col items-center animate-float">
+                            <div class="relative inline-block avatar-wrapper w-40 h-40 mx-auto mb-4  border-4 rounded-full border-white shadow-2xl cursor-pointer hover:opacity-90 transition-opacity"
+                                onclick="document.getElementById('fileInput').click()">
+                                <img src="img/z3417075344331_c8d3047faf362d17e495f421789f09ea.jpg" alt="Profile"
+                                    class="w-full h-full rounded-full object-cover" id="avatarImage">
+                                <div
+                                    class="avatar-overlay absolute inset-0 bg-black/50 flex flex-col items-center justify-center rounded-full">
+                                    <i class="fas fa-camera text-white text-3xl mb-2"></i>
+                                    <p class="text-white text-sm font-semibold">Cập nhật ảnh</p>
+                                </div>
 
-               <div class="col">
-                   <div class="box">
-                       <span>2+</span>
-                       <p>Kinh nghiệm</p>
-                   </div>
-                   <div class="box">
-                       <span>10+</span>
-                       <p>Dự án hoàn thành</p>
-                   </div>
-                   <div class="box">
-                       <span>10+</span>
-                       <p>Bán gói mè</p>
-                   </div>
-                   <div class="box">
-                       <span>999+</span>
-                       <p>Đẹp trai</p>
+                                <div class=" absolute flex items-center justify-center bottom-0 right-0 z-50 w-10 h-10 bg-white rounded-full shadow-lg cursor-pointer hover:bg-gray-100 transition-colors"
+                                    onclick="document.getElementById('fileInput').click()">
+                                    <i class="fa-solid fa-camera text-gray-700 text-lg"></i>
+                                </div>
+
+                                <input type="file" id="fileInput" accept="image/*">
+                            </div>
+
+                        </div>
+
+
+                        <!-- Info Section -->
+                        <div class="space-y-4 ">
+                            <!-- About -->
+                            <div class="flex flex-col items-center">
+                                <p class="text-white text-xl text-center font-bold">
+                                    Thơ Đồ (Xu Cà Na)</p>
+                                <p
+                                    class="text-purple-600 font-bold inline-block rounded-tr-2xl rounded-bl-2xl bg-white !m-2 !px-4 !py-1">
+                                    Web Developer
+                                </p>
+
+                            </div>
+                        </div>
+
+
+                        <!-- Social Media -->
+                        <div class="flex justify-center !mt-3 gap-4 py-4">
+                            <a href="https://www.tiktok.com/@thodepzai21" target="_blank" class="group relative">
+                                <div class="w-12 h-12 bg-gradient-to-br from-black to-gray-800 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+                                    onmouseenter="startEmojiRain('tiktok')" onmouseleave="stopEmojiRain('tiktok')">
+                                    <i class="fab fa-tiktok text-white text-2xl"></i>
+                                </div>
+
+                            </a>
+
+                            <a href="https://www.facebook.com/Pandora20103051" target="_blank" class="group relative">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+                                    onmouseenter="startEmojiRain('facebook')" onmouseleave="stopEmojiRain('facebook')">
+                                    <i class="fab fa-facebook-f text-white text-2xl"></i>
+                                </div>
+
+                            </a>
+
+                            <a href="https://zalo.me/0911063106" target="_blank" class="group relative">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+                                    onmouseenter="startEmojiRain('zalo')" onmouseleave="stopEmojiRain('zalo')">
+                                    <span class="text-white text-xl font-bold">Zalo</span>
+                                </div>
+
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="!p-6 ">
+                        <div class="grid gap-3">
+                            <div
+                                class="info-item rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-home text-white"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs text-gray-500 font-medium">Sống Tại</p>
+                                        <p class="text-sm font-bold text-gray-800 truncate">Buôn Ma Thuột</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div
+                                class="info-item rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs text-gray-500 font-medium">Đến Từ</p>
+                                        <p class="text-sm font-bold text-gray-800 truncate">Kon Tum (Thành Phố)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="info-item rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-graduation-cap text-white"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs text-gray-500 font-medium">Học Vấn</p>
+                                        <p class="text-sm font-bold text-gray-800">Đại Học/ GPA: 2.93</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div
+                                class="info-item rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-briefcase text-white"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs text-gray-500 font-medium">Kinh Nghiệm</p>
+                                        <p class="text-sm font-bold text-gray-800">2 Năm</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div
+                                class="info-item rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-envelope text-white"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs text-gray-500 font-medium">Email</p>
+                                        <p class="text-sm font-bold text-gray-800 truncate">Thoopppo45@gmail</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="info-item rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-heart text-white"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs text-gray-500 font-medium">Ngày Sinh</p>
+                                        <p class="text-sm font-bold text-gray-800">21/11/2001</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div
+                                class="info-item rounded-2xl hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-phone text-white"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs text-gray-500 font-medium">Liên Hệ</p>
+                                        <p class="text-sm font-bold text-gray-800">0911063106</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        
-            <div class="loading">
-        
-                <h2>Kĩ năng của tôi</h2>
-            
-                <div class="loading-inf4">
-                    <p>HTML</p>
-                    <p>CSS</p>
-                    <p>JavaScript</p>
-                    <p>C++</p>
+
+            <div class="w-full lg:w-2/3 flex-1">
+                <div class="mx-auto">
+
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h1 class="text-base lg:text-2xl font-bold text-gray-800 mb-6">Truy cập nhanh</h1>
+
+                            <div class="border-b border-gray-200 overflow-hidden">
+                                <div class="flex space-x-0 lg:space-x-8 overflow-scroll">
+
+                                    <button
+                                        class="tab-btn flex items-center space-x-2 py-3 px-1 relative text-sm font-medium transition-all duration-200 active"
+                                        onclick="switchTab('gioithieu', this)" data-tab="gioithieu">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                        </svg>
+                                        <span>Bản thân</span>
+                                        <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500"></span>
+                                    </button>
+
+                                    <button
+                                        class="tab-btn flex items-center space-x-2 py-3 px-1 relative text-sm font-medium text-gray-500 hover:text-gray-700 transition-all duration-200"
+                                        onclick="switchTab('vongquay', this)" data-tab="vongquay">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                        </svg>
+                                        <span>Vòng quay</span>
+                                        <span
+                                            class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 transition-transform duration-200"></span>
+                                    </button>
+
+                                    <button
+                                        class="tab-btn flex items-center space-x-2 py-3 px-1 relative text-sm font-medium text-gray-500 hover:text-gray-700 transition-all duration-200"
+                                        onclick="switchTab('kinhnghiem', this)" data-tab="kinhnghiem">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                        <span>Kinh nghiệm</span>
+                                        <span
+                                            class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 transition-transform duration-200"></span>
+                                    </button>
+
+
+                                    <button
+                                        class="tab-btn flex items-center space-x-2 py-3 px-1 relative text-sm font-medium text-gray-500 hover:text-gray-700 transition-all duration-200"
+                                        onclick="switchTab('kinang', this)" data-tab="kinang">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13 0a6 6 0 01-9 5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                        </svg>
+                                        <span>Kĩ năng</span>
+                                        <span
+                                            class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 transition-transform duration-200"></span>
+                                    </button>
+
+
+                                    <button
+                                        class="tab-btn flex items-center space-x-2 py-3 px-1 relative text-sm font-medium text-gray-500 hover:text-gray-700 transition-all duration-200"
+                                        onclick="switchTab('duan', this)" data-tab="duan">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                        </svg>
+                                        <span>Dự án</span>
+                                        <span
+                                            class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 scale-x-0 transition-transform duration-200"></span>
+                                    </button>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-content active" id="gioithieu">
+                        <div class="text-center animate-fadeInUp">
+                            <div class=" flex justify-center ">
+                                <div class="relative">
+                                    <video src="./img/demo.webm" autoplay muted loop></video>
+                                </div>
+                            </div>
+                            <div
+                                class="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-1 lg:px-6 lg:py-3 rounded-full shadow-lg mb-3 lg:mb-6">
+                                <span class="text-3xl">👋</span>
+                                <p class="text-gray-700 font-semibold text-base lg:text-xl ">Xin Chào Mọi Người!</p>
+                            </div>
+
+                            <h1 class="text-2xl lg:text-7xl font-bold text-gray-800 mb-4 drop-shadow-md">
+                                Welcome to Thơ Đồ Portfolio
+                            </h1>
+
+                            <div
+                                class="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-3xl p-4 lg:p-8 shadow-xl">
+                                <p class="text-base lg:text-xl text-gray-700 leading-relaxed mb-4">
+                                    Web Developer chuyên xây dựng website hiệu suất cao, giao diện đẹp mắt và trải
+                                    nghiệm
+                                    người dùng mượt mà.
+                                </p>
+                                <p class="text-base lg:text-xl text-gray-700 leading-relaxed mb-6">
+                                    Có kinh nghiệm làm việc với <span class="font-bold text-purple-600">React, Next.js,
+                                        Vue.js, Tailwind, SCSS, Ant Design, MySQL, PHP, Laravel, WoldPress, .NET,
+                                        FLutter,...
+                                    </span> mình luôn sẵn sàng biến ý tưởng của bạn thành hiện thực.
+                                </p>
+
+                                <div
+                                    class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1 lg:px-8 lg:py-3 rounded-full font-bold text-base lg:text-xl shadow-lg">
+                                    🎉 Bạn dám nghĩ - Tôi dám code :)
+                                </div>
+                            </div>
+
+
+                            <div class="max-w-7xl mt-8 mx-auto">
+
+                                <div class="text-center mb-6 lg:mb-12">
+                                    <h3 class="text-base lg:text-2xl font-bold text-gray-800 mb-4">
+                                        Những Câu Nói Khuyết Danh Đáng Suy Ngẫm
+                                    </h3>
+                                    <div class="flex justify-center gap-2">
+                                        <div class="h-1 w-20 bg-purple-600 rounded"></div>
+                                        <div class="h-1 w-10 bg-pink-600 rounded"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Carousel -->
+                                <div class="relative">
+                                    <div class="slider-wrapper lg:p-4">
+                                        <div class="slider-track " id="sliderTrack">
+
+                                            <div class="slide-card">
+                                                <div
+                                                    class="bg-gradient-to-br from-white to-purple-50 backdrop-blur-lg rounded-xl shadow-lg hover:shadow-3xl hover:scale-101 p-4  transition-all duration-300 h-full">
+                                                    <div class="flex items-center gap-6 !mb-3">
+                                                        <img src="./img/slider/239961560_600136051127294_1016503584865812581_n.jpg"
+                                                            alt="Avatar"
+                                                            class="w-20 h-20 rounded-full object-cover border-4 border-purple-400 shadow-lg">
+                                                        <div class="flex-1">
+                                                            <i class="fas fa-quote-left text-4xl text-purple-500"></i>
+                                                        </div>
+                                                    </div>
+                                                    <p
+                                                        class="text-sm font-bold text-gray-800 mb-2 leading-relaxed min-h-[50px]">
+                                                        "Nếu bạn cảm thấy tiền không mang lại hạnh phúc cho bạn. Vậy hãy
+                                                        đưa
+                                                        nó
+                                                        cho tôi"
+                                                    </p>
+                                                    <div class="flex items-center gap-3 border-t-4 border-purple-400">
+                                                        <div
+                                                            class="h-2 w-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full">
+                                                        </div>
+                                                        <p class="text-base font-bold text-purple-600">(Thơ Đạo Lý_G.12)
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="slide-card">
+                                                <div
+                                                    class="bg-gradient-to-br from-white to-blue-50 backdrop-blur-lg rounded-xl shadow-lg !p-4 hover:shadow-3xl hover:scale-105 transition-all duration-300 h-full">
+                                                    <div class="flex items-center gap-6 !mb-3">
+                                                        <img src="./img/slider/2.jpg" alt="Avatar"
+                                                            class="w-20 h-20 rounded-full object-cover border-4 border-blue-400 shadow-lg">
+                                                        <div class="flex-1">
+                                                            <i class="fas fa-quote-left text-4xl text-blue-500"></i>
+                                                        </div>
+                                                    </div>
+                                                    <p
+                                                        class="text-sm font-bold text-gray-800 mb-2 leading-relaxed min-h-[50px]">
+                                                        "Code dở hay code hay - Cuối cùng cũng phải hỏi thầy ChatGPT"
+                                                    </p>
+                                                    <div class="flex items-center gap-3 border-t-4 border-blue-400">
+                                                        <div
+                                                            class="h-2 w-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full">
+                                                        </div>
+                                                        <p class="text-base font-bold text-blue-600">(Thơ Nhận
+                                                            Định_G.12)
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="slide-card">
+                                                <div
+                                                    class="bg-gradient-to-br from-white to-orange-50 backdrop-blur-lg rounded-xl shadow-lg !p-4 hover:shadow-3xl hover:scale-105 transition-all duration-300 h-full">
+                                                    <div class="flex items-center gap-6 !mb-3">
+                                                        <img src="./img/slider/238836855_588351692305730_3603906466228419221_n.jpg"
+                                                            alt="Avatar"
+                                                            class="w-20 h-20 rounded-full object-cover border-4 border-orange-400 shadow-lg">
+                                                        <div class="flex-1">
+                                                            <i class="fas fa-quote-left text-4xl text-orange-500"></i>
+                                                        </div>
+                                                    </div>
+                                                    <p
+                                                        class="text-sm font-bold text-gray-800 mb-2 leading-relaxed min-h-[50px]">
+                                                        "Nếu đẹp trai là phạm pháp. Xin lỗi tôi đây đáng bị tử hình"
+                                                    </p>
+                                                    <div class="flex items-center gap-3 border-t-4 border-orange-400">
+                                                        <div
+                                                            class="h-2 w-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full">
+                                                        </div>
+                                                        <p class="text-base font-bold text-orange-600">(Thơ Thẳng
+                                                            Thắn_G.12)
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Navigation Buttons -->
+                                    <div class="nav-button prev py-5" id="prev">
+                                        <i class="fas fa-chevron-left text-purple-600 text-2xl"></i>
+                                    </div>
+                                    <div class="nav-button next " id="next">
+                                        <i class="fas fa-chevron-right text-purple-600 text-2xl"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Dots Indicator -->
+                                <div class="dots-container" id="dots"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container tab-content " id="vongquay">
+                        <div class="!flex justify-center items-center animate-fadeInUp">
+                            <div class="wheel-wrapper">
+                                <div class="pointer"></div>
+                                <canvas id="myCanvas" width="600px" height="600px" class=""></canvas>
+                                <div class="center-button lg:!w-24 lg:!h-24" id="centerBtn">
+                                    <span>QUAY</span>
+                                </div>
+                            </div>
+                            <div id="congratsPopup" class="popup">
+                                <div class="popup-content flex flex-col items-center">
+                                    <h2 id="prizeTitle">CHÚC MỪNG! 🎉</h2>
+                                    <img id="prizeImage" src="" alt="Prize">
+                                    <p id="prizeText"></p>
+                                    <button class="close-btn" onclick="closePopup()">ĐÓNG</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content h-auto p-4 " id="kinhnghiem">
+
+                        <div class="max-w-5xl mx-auto animate-fadeInUp">
+                            <!-- Header -->
+                            <div class="text-center mb-4">
+                                <h1 class="text-base lg:text-2xl font-bold text-black mb-4 drop-shadow-lg">
+                                    <i class="fas fa-graduation-cap mr-4"></i>
+                                    Kinh nghiệm
+                                </h1>
+                                <div class="flex justify-center gap-2">
+                                    <div class="h-1 w-20 bg-white rounded-full"></div>
+                                    <div class="h-1 w-10 bg-white/70 rounded-full"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="relative">
+                                <!-- Vertical Line -->
+                                <div
+                                    class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-white/30 hidden lg:block">
+                                </div>
+
+                                <!-- Timeline Items -->
+                                <div class="space-y-4">
+
+
+                                    <div class="timeline-item relative">
+                                        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                                            <!-- Left Side (Desktop) / Full Width (Mobile) -->
+                                            <div class="lg:text-right lg:pr-8">
+                                                <div
+                                                    class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105">
+                                                    <div class="flex items-center gap-3 mb-4 lg:justify-end">
+                                                        <div
+                                                            class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
+                                                            <i class="fas fa-school text-white text-xl"></i>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                            <p class="text-sm lg:text-base font-bold text-gray-800">Nhân
+                                                                viên IT & SEO website</p>
+                                                            <p class="text-xs lg:text-sm font-medium text-gray-400">
+                                                                Từ
+                                                                1/2024 -> Hiện tại</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class=" space-y-2 text-left lg:text-right">
+                                                        <h4 class="text-base lg:text-xl font-bold text-green-600">
+                                                            Công
+                                                            ty TNHH Thủy
+                                                            Kim Sinh
+                                                        </h4>
+                                                        <p class="text-gray-700 leading-relaxed">
+                                                        <ul>
+                                                            <li>
+                                                                - Lắp đặt và cài đặt phần cứng, phần mềm máy tính.
+                                                            </li>
+                                                            <li>
+                                                                - Xử lý sự cố thiết bị máy tính: máy tính, máy in,
+                                                                camera,...
+                                                            </li>
+                                                            <li>
+                                                                - Thiết kế và quản lý website.
+                                                            </li>
+                                                            <li>
+                                                                - SEO Website
+                                                            </li>
+                                                        </ul>
+
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Timeline Dot -->
+                                            <div
+                                                class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg hidden lg:block">
+                                            </div>
+
+                                            <!-- Right Side (Empty on Desktop) -->
+                                            <div class="hidden lg:block"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-item relative">
+                                        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                                            <!-- Left Side (Empty on Desktop) -->
+                                            <div class="hidden lg:block"></div>
+
+                                            <!-- Timeline Dot -->
+                                            <div
+                                                class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow-lg hidden lg:block">
+                                            </div>
+
+                                            <!-- Right Side -->
+                                            <div class="lg:pl-8">
+                                                <div
+                                                    class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105">
+                                                    <div class="flex items-center gap-3 mb-4">
+                                                        <div
+                                                            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+                                                            <i class="fas fa-university text-white text-xl"></i>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                            <p class="text-sm lg:text-base font-bold text-gray-800">
+                                                                Thiết kế và quản
+                                                                trị Website & SEO Website
+                                                            </p>
+                                                            <p class="text-xs lg:text-sm font-medium text-gray-500">
+                                                                9/2024 -
+                                                                12/2024
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <h4 class="text-base lg:text-xl font-bold text-blue-600">Công ty
+                                                            Quảng cáo nội
+                                                            thất B-One Decor</h4>
+                                                        <p class="text-gray-700 leading-relaxed">
+                                                        <ul>
+                                                            <li>
+                                                                - Hỗ trợ các quy trình kiểm tra lỗi website, đề xuất
+                                                                tính năng mới cho web của công ty.
+                                                            </li>
+                                                            <li>
+                                                                - Lập trình website bằng wordPress.
+                                                            </li>
+                                                            <li>
+                                                                - Seo website.
+                                                            </li>
+                                                            <li>
+                                                                - Đăng bài Facebook
+                                                            </li>
+                                                        </ul>
+
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="timeline-item relative">
+                                        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                                            <!-- Left Side -->
+                                            <div class="lg:text-right lg:pr-8">
+                                                <div
+                                                    class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105">
+                                                    <div class="flex items-center gap-3 mb-4 lg:justify-end">
+                                                        <div
+                                                            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+                                                            <i class="fas fa-user-graduate text-white text-xl"></i>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                            <p class="text-sm lg:text-base font-bold text-gray-800">
+                                                                Thiết
+                                                                kế Website</p>
+                                                            <p class="text-xs lg:text-sm font-medium text-gray-500">
+                                                                6/2024 -
+                                                                9/20224</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="space-y-2 text-left lg:text-right">
+                                                        <h4 class="text-base lg:text-xl font-bold text-purple-600">Công
+                                                            ty VNMEDIA
+                                                        </h4>
+                                                        <p class="text-gray-700 leading-relaxed">
+                                                        <ul>
+                                                            <li> - Lập trình website bằng wordPress.</li>
+                                                            <li> - Sửa đổi, cập nhật, cấu trúc lại và gỡ lỗi mã.</li>
+                                                            <li> - Tìm kiếm và sửa lỗi (debugging) phần mềm.</li>
+                                                            <li> - SEO website.</li>
+                                                        </ul>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Timeline Dot -->
+                                            <div
+                                                class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-purple-500 rounded-full border-4 border-white shadow-lg hidden lg:block">
+                                            </div>
+
+                                            <!-- Right Side -->
+                                            <div class="hidden lg:block"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="timeline-item relative">
+                                        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                                            <!-- Left Side -->
+                                            <div class="hidden lg:block"></div>
+
+                                            <!-- Timeline Dot -->
+                                            <div
+                                                class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg hidden lg:block">
+                                            </div>
+
+                                            <!-- Right Side -->
+                                            <div class="lg:pl-8">
+                                                <div
+                                                    class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105">
+                                                    <div class="flex items-center gap-3 mb-4">
+                                                        <div
+                                                            class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg">
+                                                            <i class="fas fa-code text-white text-xl"></i>
+                                                        </div>
+                                                        <div class="flex flex-col">
+                                                            <p class="text-sm lg:text-base font-bold text-gray-800">Thực
+                                                                tập sinh
+                                                                Frontend</p>
+                                                            <p class="text-xs lg:text-sm font-semibold text-gray-500">
+                                                                02/2024 -
+                                                                5/2024</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <h4 class="text-base lg:text-xl font-bold text-orange-600">Công
+                                                            ty TMA
+                                                            Solutions Bình Định
+                                                        </h4>
+                                                        <p class="text-gray-700 leading-relaxed">
+                                                        <ul>
+                                                            <li>
+                                                                - Tham gia phát triển và hoàn thiện website thương mại
+                                                                điện tử, sử dụng công nghệ NextJS làm Frontend và
+                                                                Laravel làm Backend. Làm việc độc lập hiệu quả trong
+                                                                việc phân tích yêu cầu hệ thống, thiết kế giao diện và
+                                                                triển khai chức năng. </li>
+                                                            <li>
+                                                                - Thực hiện các nhiệm vụ độc lập như tối ưu mã nguồn,
+                                                                cải
+                                                                thiện hiệu năng website và xử lý lỗi trong quá trình
+                                                                phát triển.
+                                                            </li>
+
+                                                            <li>
+                                                                - Học hỏi và áp dụng các phương pháp quản lý dự án
+                                                                Agile, thường xuyên phối hợp với các thành viên trong
+                                                                nhóm để đảm bảo tiến độ công việc.
+                                                            </li>
+                                                            <li>
+                                                                - Góp phần nâng cao trải nghiệm người dùng thông qua
+                                                                việc tối ưu UI/UX và kiểm tra chất lượng sản phẩm.</li>
+
+
+                                                        </ul>
+
+
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--                                  
+                                    <div class="timeline-item relative">
+                                        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                                       
+                                            <div class="lg:text-right lg:pr-8">
+                                                <div
+                                                    class="bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105">
+                                                    <div class="flex items-center gap-3 mb-4 lg:justify-end">
+                                                        <div
+                                                            class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                                                            <i class="fas fa-star text-yellow-500 text-xl"></i>
+                                                        </div>
+                                                        <h3 class="text-2xl font-bold text-white">2025</h3>
+                                                    </div>
+                                                    <div class="space-y-2 text-left lg:text-right text-white">
+                                                        <h4 class="text-xl font-bold">Dự Kiến Tốt Nghiệp</h4>
+                                                        <p class="leading-relaxed">
+                                                            Sinh viên năm 2 nhưng đầu óc trống rỗng ... Không biết
+                                                            viết
+                                                            code không biết
+                                                            cuộc đời sẽ đi về đâu. Đó là dự kiến thôi con Tốt Nghiệp
+                                                            khi
+                                                            nào thì không
+                                                            biết?
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            
+                                            <div
+                                                class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-yellow-500 rounded-full border-4 border-white shadow-lg hidden lg:block animate-pulse">
+                                            </div>
+
+                                            <div class="hidden lg:block"></div>
+                                        </div>
+                                    </div>
+
+                                   
+                                    <div class="timeline-item relative">
+                                        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                                         
+                                            <div class="hidden lg:block"></div>
+
+                                            
+                                            <div
+                                                class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-pink-500 rounded-full border-4 border-white shadow-lg hidden lg:block">
+                                            </div>
+
+                                           
+                                            <div class="lg:pl-8">
+                                                <div
+                                                    class="bg-gradient-to-br from-pink-400 to-rose-400 rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105">
+                                                    <div class="flex items-center gap-3 mb-4">
+                                                        <div
+                                                            class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                                                            <i class="fas fa-heart text-pink-500 text-xl"></i>
+                                                        </div>
+                                                        <h3 class="text-2xl font-bold text-white">2030</h3>
+                                                    </div>
+                                                    <div class="space-y-3 text-white">
+                                                        <h4 class="text-2xl font-bold flex items-center gap-2">
+                                                            Cưới Vợ 💍
+                                                        </h4>
+                                                        <p class="leading-relaxed text-lg">
+                                                            Thế là hết 1 đời
+                                                        </p>
+                                                        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4 mt-4">
+                                                            <p class="text-sm italic">
+                                                                "Đời người như một cuộc hành trình, điều quan trọng
+                                                                không phải đích đến
+                                                                mà là những trải nghiệm trên đường đi" 🌟
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="kinang" class="tab-content">
+                        <div class="flex justify-center items-center">
+                            <div
+                                class="info-card bg-white/95 backdrop-blur-sm rounded-xl lg:rounded-2xl shadow-2xl p-4 lg:p-8 mt-2 w-full lg:w-2/3">
+                                <div class="flex items-center gap-3 mb-8">
+                                    <div
+                                        class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-code text-white text-lg lg:text-xl"></i>
+                                    </div>
+                                    <h2 class="text-xl lg:text-2xl font-bold text-gray-800">Kỹ năng</h2>
+                                </div>
+                                <div class="grid grid-cols-1 gap-6">
+
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3">
+                                                <i
+                                                    class="fa-solid fa-laptop-code text-xl lg:text-3xl text-blue-600"></i>
+                                                <span class="font-bold text-gray-800 text-sm lg:text-lg">Ngôn ngữ lập
+                                                    trình: NextJS, VueJS,
+                                                    Laravel, WordPress, Tailwind, Ant Design, SCSS</span>
+                                            </div>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                            <div class="progress-bar h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
+                                                style="--progress: 100%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3">
+                                                <i
+                                                    class="fa-solid fa-file-code text-xl lg:text-3xl text-yellow-500"></i>
+                                                <span class="font-bold text-gray-800 text-sm lg:text-lg">Frameworks:
+                                                    HTML,
+                                                    JavaScript, TypeScript, CSS, PHP, MySQL</span>
+                                            </div>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                            <div class="progress-bar h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full"
+                                                style="--progress: 100%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3">
+                                                <i class="fas fa-code text-xl lg:text-3xl text-indigo-600"></i>
+                                                <span class="font-bold text-gray-800 text-sm lg:text-lg">Git</span>
+                                            </div>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                            <div class="progress-bar h-full bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full"
+                                                style="--progress: 10%;"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="duan" class="tab-content mt-4 p-4 lg:p-8 animate-fadeInUp">
+
+                        <div class="max-w-7xl mx-auto" id="courses">
+                            <!-- Header -->
+                            <div class="text-center mb-16">
+                                <h1 class=" text-base lg:text-xl font-bold text-white mb-4 drop-shadow-lg">
+                                    <i class="fas fa-book-open mr-4"></i>
+                                    Khóa học của tôi
+                                </h1>
+                                <div class="flex justify-center gap-2 mb-4">
+                                    <div class="h-1 w-20 bg-white rounded-full"></div>
+                                    <div class="h-1 w-10 bg-white/70 rounded-full"></div>
+                                </div>
+                                <p class="text-white text-xl font-medium">
+                                    Các ngôn ngữ lập trình tôi đang theo học và nghiên cứu
+                                </p>
+                            </div>
+
+                            <!-- Courses Grid -->
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                                <!-- C++ Course -->
+                                <div
+                                    class="course-card group bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
+                                    <!-- Image Container -->
+                                    <div
+                                        class="h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 relative">
+                                        <img src="./img/2.jpg" alt="C++"
+                                            class="course-image w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
+                                        </div>
+                                        <div
+                                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
+                                            <span class="font-bold text-blue-600">C++</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-6">
+                                        <div class="flex items-center gap-3 mb-4">
+                                            <div
+                                                class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                                                <i class="fas fa-code text-white text-xl"></i>
+                                            </div>
+                                            <h2 class="text-2xl font-bold text-gray-800">C++</h2>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed mb-4">
+                                            C++ là 1 trong những ngôn ngữ phổ biến để lập trình đặc biệt là lập trình
+                                            game
+                                        </p>
+                                        <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                                            <span class="text-sm font-semibold text-blue-600">Lập trình game</span>
+                                            <button
+                                                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                                Tìm hiểu thêm
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- PHP Course -->
+                                <div
+                                    class="course-card group bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
+                                    <div
+                                        class="h-48 overflow-hidden bg-gradient-to-br from-indigo-500 to-purple-600 relative">
+                                        <img src="./img/3.png" alt="PHP"
+                                            class="course-image w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
+                                        </div>
+                                        <div
+                                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
+                                            <span class="font-bold text-indigo-600">PHP</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-6">
+                                        <div class="flex items-center gap-3 mb-4">
+                                            <div
+                                                class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                                                <i class="fab fa-php text-white text-xl"></i>
+                                            </div>
+                                            <h2 class="text-2xl font-bold text-gray-800">PHP</h2>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed mb-4">
+                                            PHP là ngôn ngữ phát triển ứng dụng viết cho máy chủ, mở mã nguồn không thể
+                                            thiếu cho
+                                            website
+                                        </p>
+                                        <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                                            <span class="text-sm font-semibold text-indigo-600">Backend Web</span>
+                                            <button
+                                                class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                                Tìm hiểu thêm
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- C# Course -->
+                                <div
+                                    class="course-card group bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
+                                    <div
+                                        class="h-48 overflow-hidden bg-gradient-to-br from-purple-500 to-pink-600 relative">
+                                        <img src="./img/c-Sharp.png" alt="C#"
+                                            class="course-image w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
+                                        </div>
+                                        <div
+                                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
+                                            <span class="font-bold text-purple-600">C#</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-6">
+                                        <div class="flex items-center gap-3 mb-4">
+                                            <div
+                                                class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
+                                                <i class="fas fa-hashtag text-white text-xl"></i>
+                                            </div>
+                                            <h2 class="text-2xl font-bold text-gray-800">C#</h2>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed mb-4">
+                                            C# là ngôn ngữ lập trình thiên về hướng đối tượng đa năng, mạnh mẽ không thể
+                                            thiếu trong
+                                            lập
+                                            trình game
+                                        </p>
+                                        <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                                            <span class="text-sm font-semibold text-purple-600">OOP & Game</span>
+                                            <button
+                                                class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                                Tìm hiểu thêm
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Java Course -->
+                                <div
+                                    class="course-card group bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
+                                    <div
+                                        class="h-48 overflow-hidden bg-gradient-to-br from-orange-500 to-red-600 relative">
+                                        <img src="./img/java-logo.jpg" alt="Java"
+                                            class="course-image w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
+                                        </div>
+                                        <div
+                                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
+                                            <span class="font-bold text-orange-600">Java</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-6">
+                                        <div class="flex items-center gap-3 mb-4">
+                                            <div
+                                                class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                                <i class="fab fa-java text-white text-xl"></i>
+                                            </div>
+                                            <h2 class="text-2xl font-bold text-gray-800">Java</h2>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed mb-4">
+                                            Java là ngôn ngữ thường được các lập trình viên sử dụng để phát triển Mobile
+                                            apps, Web
+                                            apps,
+                                            game...
+                                        </p>
+                                        <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                                            <span class="text-sm font-semibold text-orange-600">Mobile & Web</span>
+                                            <button
+                                                class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                                Tìm hiểu thêm
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Python Course -->
+                                <div
+                                    class="course-card group bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
+                                    <div
+                                        class="h-48 overflow-hidden bg-gradient-to-br from-green-500 to-emerald-600 relative">
+                                        <img src="./img/ham-hash-trong-python-200.jpg" alt="Python"
+                                            class="course-image w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
+                                        </div>
+                                        <div
+                                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
+                                            <span class="font-bold text-green-600">Python</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-6">
+                                        <div class="flex items-center gap-3 mb-4">
+                                            <div
+                                                class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
+                                                <i class="fab fa-python text-white text-xl"></i>
+                                            </div>
+                                            <h2 class="text-2xl font-bold text-gray-800">Python</h2>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed mb-4">
+                                            Python là ngôn ngữ được dùng rộng rãi trong phát triển trí tuệ nhân tạo AI.
+                                            Nếu bạn đam
+                                            mê
+                                            AI thì chắc chắn không thể bỏ qua nó
+                                        </p>
+                                        <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                                            <span class="text-sm font-semibold text-green-600">AI & ML</span>
+                                            <button
+                                                class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                                Tìm hiểu thêm
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- JavaScript Course -->
+                                <div
+                                    class="course-card group bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
+                                    <div
+                                        class="h-48 overflow-hidden bg-gradient-to-br from-yellow-500 to-orange-500 relative">
+                                        <img src="./img/Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript"
+                                            class="course-image w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
+                                        </div>
+                                        <div
+                                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
+                                            <span class="font-bold text-yellow-600">JavaScript</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-6">
+                                        <div class="flex items-center gap-3 mb-4">
+                                            <div
+                                                class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
+                                                <i class="fab fa-js text-white text-xl"></i>
+                                            </div>
+                                            <h2 class="text-2xl font-bold text-gray-800">JavaScript</h2>
+                                        </div>
+                                        <p class="text-gray-600 leading-relaxed mb-4">
+                                            JavaScript là ngôn ngữ sử dụng rộng rãi cho trang Web. Nếu bạn muốn trở
+                                            thành Developer
+                                            Front-end thì chắc chắn không bỏ qua nó
+                                        </p>
+                                        <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                                            <span class="text-sm font-semibold text-yellow-600">Frontend Web</span>
+                                            <button
+                                                class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-all hover:scale-105">
+                                                Tìm hiểu thêm
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="loading-box">
-                    <div class="input1">
-                    <input type="text" id="html"placeholder="80%"></div>
-                    <div class="input1">
-                    <input type="text"id="css"placeholder="70%"></div>
-                    <div class="input1">
-                    <input type="text"id="jv"placeholder="50%"></div>
-                    <div class="input1">
-                    <input type="text"id="c"placeholder="30%"></div>
+            </div>
+        </div>
+
+        <section class=" p-4 lg:p-8">
+
+            <section class="max-w-7xl mx-auto" id="contact">
+                <!-- Header -->
+                <div class="text-center mb-16 animate-fadeInUp">
+                    <h1 class="text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+                        <i class="fas fa-envelope-open-text mr-4"></i>
+                        Liên Hệ Với Tôi
+                    </h1>
+                    <div class="flex justify-center gap-2 mb-4">
+                        <div class="h-1 w-20 bg-white rounded-full"></div>
+                        <div class="h-1 w-10 bg-white/70 rounded-full"></div>
+                    </div>
+                    <p class="text-white text-xl font-medium">
+                        Hãy kết nối và chia sẻ ý tưởng của bạn với tôi
+                    </p>
                 </div>
-            </div>
-        </div>
-        <p></p>
-    </section>
 
-    <section class="education" id="education">
-        <h1 class="heading">Học Vấn của tôi</h1>
-        <div class="box-container">
-            <div class="box">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>2019</span>
-                <h3>Tốt nghiệp Cấp 3</h3>
-                <p>Quyết định đăng kí nguyện vọng vào Trường ĐHTN</p>
-            </div>
+                <!-- Contact Content -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
 
-            
-            <div class="box">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>2020</span>
-                <h3>Học Trường PHỤ HỒ University</h3>
-                <p>Theo học được 1 năm lấy kinh nghiệm xây nhà rồi quyết định chuyển trường</p>
-            </div>
+                    <!-- Contact Info & Image -->
+                    <div class="space-y-8">
+                        <!-- Contact Cards -->
+                        <div class="space-y-4">
+                            <!-- Location -->
+                            <div
+                                class="contact-card group bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-location-dot text-white text-2xl"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-gray-500 font-medium mb-1">Địa chỉ</p>
+                                        <h3 class="text-lg font-bold text-gray-800">Trường ĐHTN (TAY NGUYEN UNIVERSITY)
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
 
-            
-            <div class="box">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>2021</span>
-                <h3>Học Tây Nguyên University</h3>
-                <p>Quyết định theo học Ngành CNTT với ước mơ trở thành Hacker đi hack FB nhưng học được 2 năm thì nản quá m.n ạ !</p>
-            </div>
+                            <!-- Phone -->
+                            <div
+                                class="contact-card group bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-phone text-white text-2xl"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-gray-500 font-medium mb-1">Số điện thoại</p>
+                                        <h3 class="text-lg font-bold text-gray-800">
+                                            <a href="tel:0935809011"
+                                                class="hover:text-green-600 transition-colors">0935809011</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
 
-            
-            <div class="box">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>2022</span>
-                <h3>Sinh viên năm 2</h3>
-                <p>Đang tập tành làm Web để làm Front End Development nhưng nó lạ lắm</p>
-            
-            </div>
+                            <!-- Email -->
+                            <div
+                                class="contact-card group bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-envelope text-white text-2xl"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-gray-500 font-medium mb-1">Email</p>
+                                        <h3 class="text-lg font-bold text-gray-800">
+                                            <a href="mailto:Thoopppo45@gmail.com"
+                                                class="hover:text-purple-600 transition-colors">Thoopppo45@gmail.com</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            
-            <div class="box">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>2025</span>
-                <h3>Dự kiến Tốt Nghiệp</h3>
-                <p>Sinh viên năm 2 nhưng đầu óc trống rỗng ... Không biết viết code không biết cuộc đời sẽ đi về đâu. Đó là dự kiến thôi còn Tốt Nghiệp khi nào thì không biết ?</p>
-            
-            </div>
+                        <!-- Illustration -->
+                        <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
+                            <img src="./img/169.png" alt="Contact Illustration" class="w-full h-auto animate-float">
+                        </div>
+                    </div>
 
-            <div class="box">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>2030</span>
-                <h3>Cưới vợ</h3>
-                <p>Thế là hết 1 đời</p>
-            </div>
-        </div>
-    </section>
+                    <!-- Contact Form -->
+                    <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl animate-fadeInUp"
+                        style="animation-delay: 0.3s;">
+                        <div class="mb-6">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-2">Gửi Tin Nhắn</h2>
+                            <p class="text-gray-600">Điền thông tin của bạn và tôi sẽ phản hồi sớm nhất có thể</p>
+                        </div>
 
-    <section class="self" id="self">
-        <h1 class="heading">Khóa học của tôi</h1>
-        <div class="product">
-            <div class="product_box">
-                <img src="./img/2.jpg">
-                <h2 class="text"><span>C++</span>
-                <p>C++ là 1 trong những ngôn ngữ phổ biến để lập trình đặc biệt là lập trình game</p></h2>
-            </div>
-            <div class="product_box">
-                <img src="./img/3.png">
-                <h2 class="text"><span>PHP</span>
-                <p>PHP là ngôn ngữ phát triển ứng dụng viết cho máy chủ,mở mã nguồn không thể thiếu cho 1 website</p></h2>
-               
-            </div>
-            <div class="product_box">
-                <img src="./img/c-Sharp.png">
-                <h2 class="text"><span>C#</span>
-                <p>C# là ngôn ngữ lập trình thiên về hướng đối tượng đa năng, mạnh mẽ trong thể thiếu trong lập trình game</p></h2>
-               
-            </div>
-            <div class="product_box">
-                <img src="./img/java-logo.jpg">
-                <h2 class="text"><span>Java</span>
-                <p>Java là ngôn ngữ thường được các lập trình viên sử dụng để phát triển Mobile apps, Web apps, game ...</p></h2>
-               
-            </div>
-            <div class="product_box">
-                <img src="./img/ham-hash-trong-python-200.jpg">
-                <h2 class="text"><span>Python</span>
-                <p>Python là ngôn ngữ được dùng rộng rãi trong phát triển trí tuệ nhân tạo AI,.. Nếu bạn đam mê AI thì chắc chắn không thể bỏ qua nó rồi</p></h2>
-               
-            </div>
-            <div class="product_box">
-                <img src="./img/Unofficial_JavaScript_logo_2.svg.png">
-                <h2 class="text"><span>JavaScript</span>
-                <p>JavaScript là ngôn ngữ sử dụng rộng rãi cho trang Web .. Nếu bạn muốn trở thành Developer Front-end thì chắc chắn không bỏ qua nó rồi</p></h2>
-               
-            </div>
-        </div>
-    </section>
-    <section class="contact"id="contact">
-        <h1 class="heading">Liên hệ với tôi</h1>
-        <div class="row">
-            <div class="contact-content">
-                 
-                 <div class="contact-content-box">
-                    <div class="contact-content-box1">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <h3>Trường ĐHTN (TAY NGUYEN UNIVERSITY)</h3></div>
-                    <div class="contact-content-box1">
-                    <i class="fa-solid fa-phone"></i>
-                    <h3>0935809011</h3></div>
-                    <div class="contact-content-box1">
-                    <i class="fa-solid fa-envelope"></i>
-                    <h3>Thoopppo45@gmail.com</h3></div>
-                 </div>
-                 <img src="./img/169.png">
-            </div>
+                        <form action="#" class="space-y-5">
+                            <!-- Name Input -->
+                            <div class="relative">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-user mr-2 text-purple-500"></i>
+                                    Tên của bạn
+                                </label>
+                                <input type="text" placeholder="Nhập tên của bạn" required
+                                    class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:bg-white focus:outline-none transition-all duration-300 text-gray-800">
+                            </div>
 
-            <div class="contact-content">
-                <form action="#">
-                    <input type="text" placeholder="Tên người dùng">
-                    <input type="email" placeholder="Email của bạn">
-                    <input type="messenger" placeholder="Ý kiến cũng như góp ý của bạn">
-                    <button type="submit">Gửi</button>
-                </form>
-            </div>
-        </div>
+                            <!-- Email Input -->
+                            <div class="relative">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-envelope mr-2 text-purple-500"></i>
+                                    Email của bạn
+                                </label>
+                                <input type="email" placeholder="example@email.com" required
+                                    class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:bg-white focus:outline-none transition-all duration-300 text-gray-800">
+                            </div>
 
-        <div class="load">
-            <div class="load-icons">
-            <h4>Facebook</h4>
-            <i class="fa-brands fa-facebook"></i></div>
-            <div class="load-icons"><h4>messenger</h4>
-            <i class="fa-brands fa-facebook-messenger"></i></div>
-            <div class="load-icons"><h4>Youtube</h4>
-            <i class="fa-brands fa-youtube"></i></div>
-            <div class="load-icons"><h4>Yahoo</h4>
-            <i class="fa-brands fa-yahoo"></i></div>
-        </div>
-    </section>
+                            <!-- Message Input -->
+                            <div class="relative">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-comment mr-2 text-purple-500"></i>
+                                    Tin nhắn của bạn
+                                </label>
+                                <textarea placeholder="Ý kiến cũng như góp ý của bạn..." rows="5" required
+                                    class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:bg-white focus:outline-none transition-all duration-300 resize-none text-gray-800"></textarea>
+                            </div>
 
+                            <!-- Submit Button -->
+                            <button type="submit"
+                                class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-6 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane"></i>
+                                Gửi Tin Nhắn
+                            </button>
+
+                            <!-- Success Message (Hidden by default) -->
+                            <div class="hidden bg-green-50 border-2 border-green-500 rounded-xl p-4 text-green-700 text-center"
+                                id="successMessage">
+                                <i class="fas fa-check-circle text-2xl mb-2"></i>
+                                <p class="font-semibold">Tin nhắn đã được gửi thành công!</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                            <i class="fas fa-share-alt mr-3 text-purple-600"></i>
+                            Kết Nối Với Tôi
+                        </h2>
+                        <p class="text-gray-600">Theo dõi tôi trên các nền tảng mạng xã hội</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <!-- Facebook -->
+                        <a href="#" class="social-icon group">
+                            <div
+                                class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+                                <i
+                                    class="fa-brands fa-facebook text-white text-5xl mb-4 group-hover:scale-110 transition-transform"></i>
+                                <h4 class="text-white font-bold text-lg">Facebook</h4>
+                                <p class="text-blue-100 text-sm mt-1">@tho.do</p>
+                            </div>
+                        </a>
+
+                        <!-- Messenger -->
+                        <a href="#" class="social-icon group">
+                            <div
+                                class="bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+                                <i
+                                    class="fa-brands fa-facebook-messenger text-white text-5xl mb-4 group-hover:scale-110 transition-transform"></i>
+                                <h4 class="text-white font-bold text-lg">Messenger</h4>
+                                <p class="text-purple-100 text-sm mt-1">Chat ngay</p>
+                            </div>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="#" class="social-icon group">
+                            <div
+                                class="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+                                <i
+                                    class="fa-brands fa-youtube text-white text-5xl mb-4 group-hover:scale-110 transition-transform"></i>
+                                <h4 class="text-white font-bold text-lg">YouTube</h4>
+                                <p class="text-red-100 text-sm mt-1">Subscribe</p>
+                            </div>
+                        </a>
+
+                        <!-- Yahoo -->
+                        <a href="#" class="social-icon group">
+                            <div
+                                class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+                                <i
+                                    class="fa-brands fa-yahoo text-white text-5xl mb-4 group-hover:scale-110 transition-transform"></i>
+                                <h4 class="text-white font-bold text-lg">Yahoo</h4>
+                                <p class="text-indigo-100 text-sm mt-1">Email</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                // Form submission handler
+                document.querySelector('form').addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Show success message
+                    const successMsg = document.getElementById('successMessage');
+                    successMsg.classList.remove('hidden');
+
+                    // Reset form
+                    this.reset();
+
+                    // Hide success message after 3 seconds
+                    setTimeout(() => {
+                        successMsg.classList.add('hidden');
+                    }, 3000);
+                });
+            </script>
+
+        </section>
+    </div>
 </body>
+
 <script src="./js/start.js"></script>
-</main>
+
 </html>
